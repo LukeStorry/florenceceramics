@@ -23,6 +23,7 @@ const getCss = () => {
 
 module.exports = function (config) {
     config.addPlugin(lazyImages, { cacheFile: "" });
+    config.addPassthroughCopy({ "assets/passthrough": "." });
 
     config.addTransform("htmlmin", htmlMinTransform);
 

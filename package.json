@@ -9,16 +9,11 @@
     "type": "git",
     "url": "git+https://github.com/LukeStorry/florenceceramics.git"
   },
-  "keywords": [
-    "website",
-    "simple",
-    "11ty"
-  ],
   "author": "Luke Storry",
   "bugs": {
     "url": "https://github.com/LukeStorry/florenceceramics/issues"
   },
-  "homepage": "https://github.com/LukeStorry/florenceceramics#readme",
+  "homepage": "https://florenceceramics.co.uk",
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-img": "^0.10.0",
