@@ -916,6 +916,11 @@ ejs@^2.7.4:
   resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.7.4.tgz#48661287573dcc53e366c7a1ae52c3a120eec9ba"
   integrity sha512-7vmuyh5+kuUyJKePhQfRQBhXV5Ce+RnaeeQArKu1EAMpL3WbgMt5WG6uQZpEVvYSSsxMXRKOewtDk9RaTKXRlA==
 
+eleventy-google-fonts@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/eleventy-google-fonts/-/eleventy-google-fonts-0.0.5.tgz#9f46948e8e32661a1c28de0852886c7b8bc14c3e"
+  integrity sha512-zeAtLoLkV3BTYcfLc74K/5eDv3IgKmiTO1+tnktlqgx5DQzyxjvrXVjCDaJpZUv0p6a1gxwpwSyqxCodJ7/uMQ==
+
 eleventy-plugin-lazyimages@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/eleventy-plugin-lazyimages/-/eleventy-plugin-lazyimages-2.1.0.tgz#237754ff83a5b4e44419d3b9d643a8daac2c4e1a"

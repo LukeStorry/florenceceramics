@@ -23,6 +23,7 @@ const getCss = () => {
 
 module.exports = function (config) {
     config.addPlugin(lazyImages, { cacheFile: "" });
+
     config.addTransform("htmlmin", htmlMinTransform);
 
     config.addShortcode("getCss", getCss);
