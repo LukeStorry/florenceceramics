@@ -20,14 +20,19 @@ const getCss = () => {
     const cssFilePath = path.resolve(__dirname, "./src/_includes/styles.css");
     return fs.readFileSync(cssFilePath);
 }
+const renderImageGrid = () => {
+    return "";
+};
 
 module.exports = function (config) {
-    config.addPlugin(lazyImages, { cacheFile: "" });
     config.addPassthroughCopy({ "assets/passthrough": "." });
+    config.addPassthroughCopy({ "assets/img": "img" });
+    config.addPlugin(lazyImages, { cacheFile: "" });
 
     config.addTransform("htmlmin", htmlMinTransform);
 
     config.addShortcode("getCss", getCss);
+    config.addShortcode("renderImageGrid", renderImageGrid);
     global.helpers = config.javascriptFunctions;
     config.setPugOptions({ globals: ['helpers'] });
 

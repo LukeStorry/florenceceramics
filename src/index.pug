@@ -3,6 +3,8 @@ layout: "layout.pug"
 ---
 
 header
-    h1 Florence Ceramics
+    //- h1 Florence Ceramics
+    img#logo(src="/img/logo.png", alt="Florence Ceramics")
     p Ceramicist making pieces for the everyday 🌻
 
+main=helpers.renderImageGrid()
