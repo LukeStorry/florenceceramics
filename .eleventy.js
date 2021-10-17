@@ -31,17 +31,8 @@ const imageShortcode = (src, alt) => {
     };
     Image(src, options);
     const metadata = Image.statsSync(src, options);
-    let imageAttributes = {
-        alt,
-        sizes: "(max-width: 400px) 300px, (max-width: 700px) 600px, 1000px",
-        loading: "lazy",
-        decoding: "async",
-    };
-    console.log(metadata.jpeg[0]);
-    // return Image.generateHTML(metadata, imageAttributes);
     return `<img src="${metadata.jpeg[0].url}" alt="${alt}" srcset="${metadata.jpeg.map(i => i.srcset).join(', ')}" ` +
-        `sizes="(max-width: 400px) 300px, (max-width: 700px) 600px, 1000px" loading="lazy" decoding="async">`
-        // TODO figure out why >600px stops gridding, size change too large?
+        `loading="lazy" decoding="async">`
 }
 
 const createPicsCollection = () => {
