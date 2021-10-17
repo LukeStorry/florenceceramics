@@ -23,9 +23,11 @@ const getCss = () => {
 
 const imageShortcode = (src, alt) => {
     const options = {
-        widths: [300],
-        formats: ["jpeg"],
+        widths: [300, 600, 1000],
+        formats: ["jpg"],
         outputDir: "./dist/img/",
+        // outputDir: "./assets/pics_new/",
+        // filenameFormat: (id, src, width, format, options) => `${src.split('/').slice(-1)[0].split('.')[0]}.${format}`,
     };
     Image(src, options);
     const metadata = Image.statsSync(src, options);
@@ -35,7 +37,11 @@ const imageShortcode = (src, alt) => {
         loading: "lazy",
         decoding: "async",
     };
-    return Image.generateHTML(metadata, imageAttributes);
+    console.log(metadata.jpeg[0]);
+    // return Image.generateHTML(metadata, imageAttributes);
+    return `<img src="${metadata.jpeg[0].url}" alt="${alt}" srcset="${metadata.jpeg.map(i => i.srcset).join(', ')}" ` +
+        `sizes="(max-width: 400px) 300px, (max-width: 700px) 600px, 1000px" loading="lazy" decoding="async">`
+        // TODO figure out why >600px stops gridding, size change too large?
 }
 
 const createPicsCollection = () => {
