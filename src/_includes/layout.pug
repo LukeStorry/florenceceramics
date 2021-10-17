@@ -15,6 +15,6 @@ html(lang='en-gb')
         meta(name="theme-color" content="black")
         link(rel='canonical', href=url + page.fileSlug)
         link(rel="shortcut icon" href="/favicon.ico")
-        style=helpers.getCss()
-
-    body !{content}
+        style
+            include styles.css
+    body  !{content}
