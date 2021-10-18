@@ -8,6 +8,11 @@ header
     //- div#logo !{helpers.image("assets/logo.png", "Florence Ceramics")}
 
 main
+    div#modal(role="dialog" aria-modal="true" onClick="closeModal(event)")
+        button(onClick="closeModal()") &times;
+        img
+
+
     ul#pictures
         each pic in collections.pics
             li.picture !{helpers.image(pic.src, pic.alt)}

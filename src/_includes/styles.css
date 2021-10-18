@@ -24,7 +24,11 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-family: 'Cinzel', serif;
     /* font-family: 'Eagle Lake', serif; */
     text-align: end;
@@ -33,6 +37,10 @@ h1, h2, h3, h4, h5 {
 p {
     font-family: 'Cormorant', serif;
     text-align: end;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 html {
@@ -53,7 +61,6 @@ header {
     padding: 0 1rem;
     font-size: 140%;
     background-color: black;
-    /* text-align: center; */
     border-bottom: solid 2px white;
 }
 
@@ -84,14 +91,69 @@ li.picture {
     max-width: 80vw;
 }
 
-li.picture img {
+img {
+    object-fit: cover;
     height: 100%;
     width: 100%;
-    object-fit: cover;
-    vertical-align: bottom;
     margin: auto;
+    display: block;
 }
 
 li.blank {
     flex-grow: 10;
+}
+
+#modal {
+    transition: height 0ms 600ms, opacity 400ms 0ms;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    z-index: 1;
+    padding: 6rem 3rem;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#modal.active {
+    height: 100%;
+    opacity: 1;
+    transition: height 0ms 0ms, opacity 600ms 0ms;
+}
+
+#modal img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 1rem;
+}
+
+#modal button {
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+    font-size: 2rem;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    outline: none;
+    border: none;
+}
+
+#modal button:hover,
+#modal button:focus {
+    color: #bbb;
+}
+
+.pointer {
+    cursor: pointer;
 }
