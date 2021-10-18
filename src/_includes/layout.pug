@@ -17,4 +17,14 @@ html(lang='en-gb')
         link(rel="shortcut icon" href="/favicon.ico")
         style
             include styles.css
-    body  !{content}
+    body 
+        header
+            h1 Florence Ceramics
+            p Ceramicist making pieces for the everyday 🌻
+            //- div#logo !{helpers.image("assets/logo.png", "Florence Ceramics")}
+            span 
+                a(href="/") Home
+                a(href="/contact") Contact
+                a(href="https://www.instagram.com/florenceceramics/") Instagram
+
+        main !{content}

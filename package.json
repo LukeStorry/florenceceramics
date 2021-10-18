@@ -1,23 +1,22 @@
 {
-  "name": "florenceceramics",
-  "license": "UNLICENSED",
-  "scripts": {
-    "build": "eleventy",
-    "serve": "eleventy --serve"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LukeStorry/florenceceramics.git"
-  },
-  "author": "Luke Storry",
-  "bugs": {
-    "url": "https://github.com/LukeStorry/florenceceramics/issues"
-  },
-  "homepage": "https://florenceceramics.co.uk",
-  "dependencies": {
-    "@11ty/eleventy": "^0.12.1",
-    "@11ty/eleventy-img": "^0.10.0",
-    "clean-css": "^5.2.1",
-    "html-minifier": "^4.0.0"
-  }
+    "name": "florenceceramics",
+    "license": "UNLICENSED",
+    "scripts": {
+        "build": "eleventy",
+        "serve": "eleventy --serve"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LukeStorry/florenceceramics.git"
+    },
+    "author": "Luke Storry",
+    "bugs": {
+        "url": "https://github.com/LukeStorry/florenceceramics/issues"
+    },
+    "homepage": "https://florenceceramics.co.uk",
+    "dependencies": {
+        "@11ty/eleventy": "^0.12.1",
+        "@11ty/eleventy-img": "^0.10.0",
+        "html-minifier": "^4.0.0"
+    }
 }

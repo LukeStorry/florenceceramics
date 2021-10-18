@@ -16,9 +16,9 @@ const htmlMinTransform = (value, outputPath) => {
     return htmlmin.minify(value, config);
 }
 
-const imageShortcode = (src, alt) => {
+const imageShortcode = (src, alt, withLarge = false) => {
     const options = {
-        widths: [300, 600, 1000],
+        widths: withLarge ? [300, 600, 1000] : [300, 600],
         formats: ["jpg"],
         outputDir: "./dist/img/",
         // outputDir: "./assets/pics_new/",
@@ -26,15 +26,17 @@ const imageShortcode = (src, alt) => {
     };
     Image(src, options);
     const metadata = Image.statsSync(src, options);
-    const smallestUrl = metadata.jpeg[0].url;
-    const srcset = metadata.jpeg.map(i => i.srcset).join(', ');
-    return `<img src="${smallestUrl}" alt="${alt}" srcset="${srcset}" loading="lazy">`
+    const smallest = metadata.jpeg[0];
+    const srcset = metadata.jpeg.slice(0, 2).map(i => i.srcset).join(', ');
+    const sizes = "(max-width: 800px) 300px, 600px";
+    const dataAttr = withLarge ? "data-large-src=" + metadata.jpeg[metadata.jpeg.length - 1].url : "";
+    return `<img src="${smallest.url}" width=${smallest.width} height=${smallest.height} alt="${alt}" srcset="${srcset}" sizes="${sizes}" ${dataAttr} loading="lazy">`
 }
 
 const createPicsCollection = () => {
     const picsDirectory = path.resolve(__dirname, "./assets/pics");
     const picFilenames = fs.readdirSync(picsDirectory);
-    return picFilenames.map(filename => ({ src: `assets/pics/${filename}`, alt: filename.split('.')[0] }));
+    return picFilenames.map((filename, index) => ({ index, src: `assets/pics/${filename}`, alt: filename.split('.')[0] }));
 };
 
 module.exports = function(config) {

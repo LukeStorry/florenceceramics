@@ -1,22 +1,15 @@
 ---
 layout: "layout.pug"
 ---
+div#modal(role="dialog" aria-modal="true" onClick="closeModal(event)")
+    button(onClick="closeModal()") &times;
+    img
 
-header
-    h1 Florence Ceramics
-    p Ceramicist making pieces for the everyday 🌻
-    //- div#logo !{helpers.image("assets/logo.png", "Florence Ceramics")}
-
-main
-    div#modal(role="dialog" aria-modal="true" onClick="closeModal(event)")
-        button(onClick="closeModal()") &times;
-        img
-
-
-    ul#pictures
-        each pic in collections.pics
-            li.picture !{helpers.image(pic.src, pic.alt)}
-        li.blank
+ul#pics-container
+    each pic in collections.pics
+        li.pic-container.pointer("role"="button" tabindex=0 onClick="openModal(event, this.firstChild)" onKeyDown="openModal(event, this.firstChild)").
+            !{helpers.image(pic.src, pic.alt, true)}
+    li.blank
 
 script
-    include js/attachModals.js
+    include js/modals.js
