@@ -202,4 +202,5 @@ form button {
 
 .hidden {
     height: 0;
+    overflow: hidden;
 }
