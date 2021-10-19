@@ -90,12 +90,6 @@ header {
     margin: auto;
 }
 
-img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
 ul#pics-container {
     display: flex;
     flex-wrap: wrap;
@@ -110,6 +104,22 @@ li.pic-container {
     flex-grow: 1;
     height: 30vh;
     max-width: 50vw;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.pic-container img {
+    object-fit: cover;
+}
+
+#modal img {
+    border-radius: 1rem;
+    object-fit: contain;
 }
 
 li.blank {
@@ -139,14 +149,6 @@ li.blank {
     height: 100%;
     opacity: 1;
     transition: height 0ms 0ms, opacity 600ms 0ms;
-}
-
-#modal img {
-    max-height: 100%;
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    border-radius: 1rem;
 }
 
 #modal button {
