@@ -19,7 +19,7 @@ const htmlMinTransform = (value, outputPath) => {
 const imageShortcode = (src, alt, withLarge = false) => {
     const options = {
         widths: withLarge ? [300, 600, 1000] : [300, 600],
-        formats: ["jpg"],
+        formats: ["jpg", "webp"],
         outputDir: "./dist/img/",
         // outputDir: "./assets/pics_new/",
         // filenameFormat: (id, src, width, format, options) => `${src.split('/').slice(-1)[0].split('.')[0]}.${format}`,
@@ -27,10 +27,9 @@ const imageShortcode = (src, alt, withLarge = false) => {
     Image(src, options);
     const metadata = Image.statsSync(src, options);
     const smallest = metadata.jpeg[0];
-    const srcset = metadata.jpeg.slice(0, 2).map(i => i.srcset).join(', ');
-    const sizes = "(max-width: 800px) 300px, 600px";
+    const srcset = metadata.jpeg.slice(0, 2).concat(metadata.webp).map(i => i.srcset).join(', ');
     const dataAttr = withLarge ? "data-large-src=" + metadata.jpeg[metadata.jpeg.length - 1].url : "";
-    return `<img src="${smallest.url}" width=${smallest.width} height=${smallest.height} alt="${alt}" srcset="${srcset}" sizes="${sizes}" ${dataAttr} loading="lazy">`
+    return `<img src="${smallest.url}" width=${smallest.width} height=${smallest.height} alt="${alt}" srcset="${srcset}" ${dataAttr} loading="lazy" defer="async">`
 }
 
 const createPicsCollection = () => {
