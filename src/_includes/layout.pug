@@ -1,22 +1,30 @@
 ---
-metaTitle: "Florence Ceramics"
-metaDescription: "Ceramicist making pieces for the everyday 🌻"
-url: "https://florenceceramics.co.uk"
+title: Florence Ceramics
+description: Ceramicist making pieces for the everyday 🌻
+author: Florence Williams
+ogtype: website
+image: img/88a36a65-1000.jpeg
+url: https://florenceceramics.co.uk/
 ---
 
 doctype html
 html(lang='en-gb')
     head
         meta(charset='utf-8')
-        title=metaTitle
-        meta(name='description', content=metaDescription)
+        title=title
+        meta(name='description', content=description)
         meta(http-equiv='X-UA-Compatible' content='IE=edge')
         meta(name='viewport' content='width=device-width, initial-scale=1')
         meta(name="theme-color" content="black")
-        link(rel='canonical', href=url + page.fileSlug)
+        link(rel='canonical', href=url)
         link(rel="shortcut icon" href="/favicon.ico")
-        style
-            include styles.css
+        meta(property="og:title" content=title)
+        meta(property="og:url" content=url)
+        meta(property="og:description" content=!{description})
+        meta(property="og:image" content=image)
+        meta(property="og:type" content="webste" )
+    style
+        include styles.css
     body 
         header
             h1 Florence Ceramics

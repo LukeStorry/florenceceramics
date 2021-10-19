@@ -38,15 +38,15 @@ const createPicsCollection = () => {
     return picFilenames.map((filename, index) => ({ index, src: `assets/pics/${filename}`, alt: filename.split('.')[0] }));
 };
 
-module.exports = function(config) {
-    config.addPassthroughCopy({ "assets/passthrough": "." });
-    config.addWatchTarget("./src/js/");
-    config.addCollection("pics", createPicsCollection);
-    config.addTransform("htmlmin", htmlMinTransform);
+module.exports = function(eleventyConfig) {
+    eleventyConfig.addPassthroughCopy({ "assets/passthrough": "." });
+    eleventyConfig.addWatchTarget("./src/js/");
+    eleventyConfig.addCollection("pics", createPicsCollection);
+    eleventyConfig.addTransform("htmlmin", htmlMinTransform);
 
-    config.addShortcode("image", imageShortcode);
-    global.helpers = config.javascriptFunctions;
-    config.setPugOptions({ globals: ['helpers'] });
+    eleventyConfig.addShortcode("image", imageShortcode);
+    global.helpers = eleventyConfig.javascriptFunctions;
+    eleventyConfig.setPugOptions({ globals: ['helpers'] });
 
     return {
         dir: {
