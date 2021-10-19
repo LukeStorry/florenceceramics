@@ -199,3 +199,7 @@ form label {
 form button {
     margin: 1rem 0 -0.5rem auto;
 }
+
+.hidden {
+    height: 0;
+}

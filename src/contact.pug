@@ -6,7 +6,11 @@ div.container
 
     div Email at: _______
 
-    form(name="contact" method="POST" data-netlify="true")
+    form(name="contact" netlify-honeypot="bot-field" method="POST" data-netlify="true")
+      p.hidden
+        label(for="bot-field") Don’t fill this out if you’re human:
+        input(id name="bot-field")
+        
         div
             label(for="name") Name 
             input(type="text" id="name" name="name" required)
