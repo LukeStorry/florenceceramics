@@ -27,7 +27,7 @@ const imageShortcode = (src, alt, withLarge = false) => {
     Image(src, options);
     const metadata = Image.statsSync(src, options);
     const smallest = metadata.jpeg[0];
-    const srcset = metadata.jpeg.slice(0, 2).concat(metadata.webp).map(i => i.srcset).join(', ');
+    const srcset = metadata.jpeg.slice(0, 2).concat(metadata.webp.slice(0, 2)).map(i => i.srcset).join(', ');
     const dataAttr = withLarge ? "data-large-src=" + metadata.jpeg[metadata.jpeg.length - 1].url : "";
     return `<img src="${smallest.url}" width=${smallest.width} height=${smallest.height} alt="${alt}" srcset="${srcset}" ${dataAttr} loading="lazy" defer="async">`
 }
