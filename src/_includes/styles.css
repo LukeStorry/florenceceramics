@@ -47,6 +47,9 @@ h4,
 h5 {
     font-family: 'Cinzel', serif;
     /* font-family: 'Eagle Lake', serif; */
+}
+
+h1 {
     text-align: end;
 }
 
@@ -81,8 +84,10 @@ header {
     margin: 1rem auto;
 }
 
-main {
-    min-height: 50vh;
+.container {
+    max-width: 40rem;
+    padding: 0 2rem;
+    margin: auto;
 }
 
 img {
@@ -166,8 +171,31 @@ li.blank {
     cursor: pointer;
 }
 
-cursor: pointer;
-
+form {
+    margin: 2rem 1rem;
+    padding: 1rem;
+    border: 1px solid white;
+    border-radius: 0.2rem;
 }
 
+form div {
+    margin: 1rem;
+    /* border-bottom: white 1px solid; */
+    display: flex;
+}
+
+form input,
+form textarea {
+    flex-grow: 6;
+}
+
+form label {
+    flex-grow: 1;
+    display: inline-block;
+    width: 5rem;
+    vertical-align: top;
+}
+
+form button {
+    margin: 1rem 0 -0.5rem auto;
 }
