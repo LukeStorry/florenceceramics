@@ -37,12 +37,15 @@ header {
     font-size: 140%;
     text-align: center;
     width: 100%;
-    padding: 0 1rem;
+}
+@media (max-width: 500px) {
+    header {font-size: 120%;}
+    main {margin-top:1rem;}
 }
 
 #logo {
-    max-height: 20rem;
-    max-width: 20rem;
+    max-height: 15rem;
+    max-width: 15rem;
     border-radius: 100%;
     margin: 1rem auto;
     overflow: hidden
@@ -52,18 +55,12 @@ header {
     /* background-color: #aaa; */
     border-top: solid 2px #eee;
     margin-top: 2rem;
-    padding: 1rem;
-    overflow-x: scroll;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-#navbar::-webkit-scrollbar {
-    display: none;
+    padding: 1rem 0;
+    max-width: 80rem;
 }
 
 #navbar a {
     text-decoration: none;
-    margin: 1rem;
     color: #424242;
     padding: 1rem;
 }
