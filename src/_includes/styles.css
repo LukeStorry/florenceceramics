@@ -1,27 +1,7 @@
 @font-face {
-    font-family: 'Eagle Lake';
-    font-style: normal;
-    font-weight: 400;
+    font-family: 'Open Sans';
     font-display: swap;
-    src: url(https://fonts.gstatic.com/s/eaglelake/v10/ptRMTiqbbuNJDOiKj9wG1On4KA.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-    font-family: 'Cormorant';
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/cormorant/v11/H4clBXOCl9bbnla_nHIq75u9.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-    font-family: 'Cinzel';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/cinzel/v11/8vIU7ww63mVu7gtR-kwKxNvkNOjw-tbnfY3lDQ.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    src: local(''), url('/OpenSans.ttf');
 }
 
 * {
@@ -29,16 +9,18 @@
 }
 
 html {
-    color: white;
-    background-color: black;
+    background-color: white;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     width: 100%;
-    height: 100%;
-    min-height: 100vh;
     margin: 0;
-    font-family: 'Cormorant', serif;
+    padding: 0;
 }
 
 h1,
@@ -46,41 +28,49 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Cinzel', serif;
+    /* font-family: 'Open Sans', sans; */
     /* font-family: 'Eagle Lake', serif; */
 }
 
-h1 {
-    text-align: end;
-}
-
-p {
-    text-align: end;
-}
-
-a {
-    text-decoration: none;
-    margin: 1rem;
-    color: ghostwhite;
-}
-
-a:hover {
-    color: white
-}
 
 header {
-    margin: 0 1rem 1rem 1rem;
-    padding: 0 1rem;
     font-size: 140%;
-    background-color: black;
-    border-bottom: solid 2px white;
+    text-align: center;
+    width: 100%;
+    padding: 0 1rem;
 }
 
 #logo {
     max-height: 20rem;
     max-width: 20rem;
-    border-radius: 50%;
+    border-radius: 100%;
     margin: 1rem auto;
+    overflow: hidden
+}
+
+#navbar{
+    /* background-color: #aaa; */
+    border-top: solid 2px #eee;
+    margin-top: 2rem;
+    padding: 1rem;
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+#navbar::-webkit-scrollbar {
+    display: none;
+}
+
+#navbar a {
+    text-decoration: none;
+    margin: 1rem;
+    color: #424242;
+    padding: 1rem;
+}
+
+#navbar a:hover {
+    background-color: #eee;
+    color: #000
 }
 
 .container {
@@ -94,8 +84,9 @@ ul#pics-container {
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
     padding: 0;
+    margin:0;
     list-style: none;
 }
 

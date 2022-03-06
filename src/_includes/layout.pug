@@ -13,9 +13,7 @@ html(lang='en-gb')
         meta(charset='utf-8')
         title=title
         meta(name='description', content=description)
-        meta(http-equiv='X-UA-Compatible' content='IE=edge')
         meta(name='viewport' content='width=device-width, initial-scale=1')
-        meta(name="theme-color" content="black")
         link(rel='canonical', href=url)
         link(rel="shortcut icon" href="/favicon.ico")
         meta(property="og:title" content=title)
@@ -27,10 +25,10 @@ html(lang='en-gb')
         include styles.css
     body 
         header
-            h1 Florence Ceramics
-            p Ceramicist making pieces for the everyday 🌻
-            //- div#logo !{helpers.image("assets/logo.png", "Florence Ceramics")}
-            span 
+            div#logo !{helpers.image("assets/logo.png", "Florence Ceramics")}
+            p British Ceramicist making modern, functional tableware for the everyday
+            p small-batch // wheel-thrown // lessons
+            div#navbar
                 a(href="/") Home
                 a(href="/contact") Contact
                 a(href="https://www.instagram.com/florenceceramics/") Instagram
